@@ -66,3 +66,14 @@ curl http://169.254.169.254/latest/dynamic/instance-identity/document
 - AMIからインスタンスを立ち上げたらTIMEZONE設定は初期化される
   - [cloud-init内でタイムゾーン設定を初期化するため](https://dev.classmethod.jp/articles/five-confs-of-ec2-linux-sysops/)
 
+## AMI
+
+- AMIからインスタンスを立ち上げたらTIMEZONE設定は初期化される
+  - [cloud-init内でタイムゾーン設定を初期化するため](https://dev.classmethod.jp/articles/five-confs-of-ec2-linux-sysops/)
+
+
+## ELB(ElasticLoadBalancer)
+
+- ELBは起動時に内部でノードが生成されて障害が発生した時はノードが複製されるため単一障害店とはなりえない。
+  - 水平スケーリング-> 数の増減でスケーリングすること
+  - 垂直スケーリング-> インスタンスそのものの性能を変更してスケーリングすること
