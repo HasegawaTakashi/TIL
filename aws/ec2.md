@@ -61,3 +61,8 @@ curl http://169.254.169.254/latest/dynamic/instance-identity/document
   "version" : "2017-09-30"
 }
 ```
+## AMI
+
+- AMIからインスタンスを立ち上げたらTIMEZONE設定は初期化される
+  - [cloud-init内でタイムゾーン設定を初期化するため](https://dev.classmethod.jp/articles/five-confs-of-ec2-linux-sysops/)
+
