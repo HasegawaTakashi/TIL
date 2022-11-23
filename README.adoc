@@ -1,0 +1,38 @@
+:source-highlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+= TIL
+
+== 作成ルール
+
+. 項目ごとにディレクトリを作成
+. ディレクトリ内に小分類の.adocファイルを作成
+
+```
+例
+.
+└ aws
+    └── ec2.adoc
+    └── lamda.adoc
+```
+
+== キーボードショートカット
+
+|===
+|ショートカット|目的
+
+|kbd:[F11]
+|全画面表示
+
+|kbd:[Ctrl+T]
+|新規タブを開く
+
+|kbd:[Ctrl+Shift+N]
+|シークレットウインドウを開く
+
+|kbd:[Ctrl+k,Ctrl+Shift+v]
+
+|===

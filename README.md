@@ -1,11 +1,9 @@
 # TIL
 
 ## 作成ルール
-
-- 大まかな項目ごとにmarkdownファイルを作成
+- [Asciidoctor文法リファレンス](https://takumon.github.io/asciidoc-syntax-quick-reference-japanese-translation/)
 - 項目ごとにディレクトリを作成
 - ディレクトリ内部に小分類のmarkdownファイルを作成
-- 小分類のmarkdownファイルへのリンクを大分類のmarkdownファイルに記述する
 
 ~~~~~~~~~~~~~~~
 Today I Learned.
