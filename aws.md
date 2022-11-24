@@ -1,1 +1,2 @@
 - [EC2](./aws/ec2.md)
+- [S3](./aws/s3.adoc)
