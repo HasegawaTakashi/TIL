@@ -6,5 +6,4 @@
 
 = Python
 
-- [Django](./python/django.adoc)
-
+- link:python/django.adoc[Django]
