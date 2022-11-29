@@ -1,0 +1,10 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+= Python
+
+- [Django](./python/django.adoc)
+
