@@ -6,4 +6,4 @@
 
 = Docker
 
-- list:docker/container.adoc[container]
+- link:docker/container.adoc[container]
