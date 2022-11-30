@@ -1,0 +1,39 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+= Dockerfile
+
+== build時のファイルパス設定
+
+- docker-compose.yml でcontext設定をする
+
+.
+└── src
+    ├── docker
+    │   ├── docker-compose.yml
+    │   └── Dockerfile
+    └── app
+        └── requirements.txt
+
+[source, docker]
+----
+# docker-compose.yml
+
+services:
+  app:
+    build:
+      context: ../ # ADD, COPYする際のカレントディレクトリにもなる
+      dockerfile: ./dockerfile
+----
+
+[source, docker]
+----
+# Dockerfile
+
+FROM python:3.11
+
+COPY src/app/requirements.txt requirements.txt
+----
