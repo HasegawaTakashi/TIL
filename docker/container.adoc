@@ -1,0 +1,25 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+= コンテナ関連
+
+== コンテナの起動順
+
+- DBコンテナの起動完了を待つ
+.. シェルスクリプトを使う
+
+[source, bash]
+----
+#!/bin/bash
+
+echo "Start background sleep 10 seconds"
+(
+  sleep 10
+)
+
+# 待機後実行するコマンドを書いていく
+/usr/local/bin/python3 manage.py runserver 0.0.0.0:8000 # などなど
+----

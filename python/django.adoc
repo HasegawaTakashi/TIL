@@ -1,0 +1,23 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+= Django
+
+== SECRET_KEY
+
+- 自動生成されたSECRET_KEY内に$が含まれている場合正常に機能せず、
+```
+invalid interpolation format for services.app.environment.[].
+You may need to escape any $ with another $.
+```
+と表示される
+解決策は以下の通り
+
+. $の前に$をもう一つつける +
+.. aaaaa ----- aaa$asdf +
+.. aaaaa ----- aaa$$asdf
+
+. .envファイルを作成する

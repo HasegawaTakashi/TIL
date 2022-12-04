@@ -1,0 +1,20 @@
+:source-hightlight: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+= S3
+
+== 参考URL置場
+
+- https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/storage-class-intro.html[Amazon S3 ストレージクラスを使用する]
+- https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/using-intelligent-tiering.html[S3 Intelligent-Tiering の使用]
+
+== S3のストレージクラス
+
+- S3ストレージに保存したデータをアクセス頻度に応じて https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/storage-class-intro.html[ストレージクラス]を変更できる。
+
+== S3 Intelligent-Tiering
+
+- アクセス頻度が変化する、または不明なデータのストレージコストを自動的に最適化するストレージクラスを https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/using-intelligent-tiering.html[S3 Intelligent-Tiering] という
