@@ -1,0 +1,36 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+== nullについて
+
+=== null演算子
+
+=== null条件演算子
+
+[source,C#]
+----
+
+# personがnullの場合.nameはnull、
+# personがnullでない場合のみperson.nameを返す
+var name = person?.name;
+
+# nameがnullだったらpersonを、
+# nameがnullでなければhumanを返す。
+var name = null ? person : human;
+
+----
+
+=== null合体演算子
+
+[source,C#]
+----
+
+# ??の左辺がnullでない場合は左辺を返し、左辺がnullの場合は右辺を返す。
+
+var c = a ?? b;
+# c は aがnullでなければaを, aがnullであればbを c へ代入する
+
+----

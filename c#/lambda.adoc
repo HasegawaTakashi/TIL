@@ -1,0 +1,19 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+== ラムダ式
+
+=== https://learn.microsoft.com/ja-jp/dotnet/csharp/language-reference/operators/lambda-expressions[基本構文]
+
+```C
+
+/// (input-parameters) => expression
+
+Func<int, int> square = x => x * x;
+Console.WriteLine(square(5));
+// Output: 25
+
+```

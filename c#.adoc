@@ -1,0 +1,11 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+= C#
+
+include::./c#/time.adoc[]
+include::./c#/null.adoc[]
+include::./c#/lambda.adoc[]

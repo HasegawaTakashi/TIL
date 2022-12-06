@@ -1,0 +1,29 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+== 時間関係
+
+=== DateTime
+
+- DateTime
+----
+
+DateTime.Now;
+# 2022/12/06 10:21:30
+
+DateTime.Now.Year;
+# 2022
+
+DateTime.Now.Month;
+# 12
+
+DateTime.Now.Date;
+# 2022/12/06 0:00:00
+
+DateTime.Now.ToString("yyyy-MM-dd");
+# 2022-12-06
+
+----
