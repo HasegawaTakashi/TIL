@@ -7,3 +7,4 @@
 = GitHub
 
 include::github/issue.adoc[]
+include::github/push-to-remote.adoc[]
