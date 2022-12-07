@@ -1,0 +1,8 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+include::aws/s3.adoc[]
+include::aws/ec2.md[]

@@ -1,0 +1,20 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+== Issue
+
+
+=== 紐づけ方法
+
+- コミットとの紐づけ
+* コミットに紐づけたいissue番号をコメントに記載する
+* ex : git commit example-file -m '#5 commit comment' +
+  これで#5番のissueにコミットが紐づけられる
+
+- プルリクエストとの紐づけ
+* プルリクエストのコメントにissue番号を記載する
+
+
