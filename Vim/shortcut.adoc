@@ -1,0 +1,24 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+=== ショートカットコマンド備忘録
+
+- キーボードショートカット
+
+|===
+
+|キーボード|目的
+
+|kbd:[数字 + G]
+|指定行へ移動
+
+|kbd:[y]
+|指定範囲コピー
+
+|kbd:[p]
+|ペースト
+
+|===
