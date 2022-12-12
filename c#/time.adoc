@@ -27,3 +27,11 @@ DateTime.Now.ToString("yyyy-MM-dd");
 # 2022-12-06
 
 ----
+
+- TimeSpan
+----
+
+TimeSpan.Parse("00:00")
+# TimeSpan型 00:00
+
+----
