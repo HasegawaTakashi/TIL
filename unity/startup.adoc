@@ -1,0 +1,14 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+== 環境構築
+
+- https://docs.unity3d.com/hub/manual/InstallHub.html
+[line-through]#今回はUbuntuへインストールしてみた#
+
+. 結局windowsへインストールする
+
+- https://scratch.best/game/battlecats-part1https://dkrevel.com/makegame-beginner/program-beginner/[Unity + C# ゲームを作ってみよう]
