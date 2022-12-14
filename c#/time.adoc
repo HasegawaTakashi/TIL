@@ -6,32 +6,86 @@
 
 == 時間関係
 
-=== DateTime
+=== https://learn.microsoft.com/ja-jp/dotnet/api/system.datetime?view=net-7.0[DateTime]
 
-- DateTime
+- DateTimeオブジェクトの初期化
+
+. コンストラクター呼び出し
+
+[source, csharp]
+----
+
+var date1 = new DateTime(2008, 5, 1, 8, 30, 52);
+Console.WriteLine(date1);
+// 05/01/2008 08:30:52
+Console.WriteLine(DateTime.Now);
+// 12/14/2022 13:44:46
+
+----
+
+. DateTimeプロパティ、メソッドの戻り値に割り当てる
+
+[source, csharp]
+----
+
+DateTime now = DateTime.Now; /// 12/14/2022 13:47:13
+
+DateTime utcnow = DateTime.UtcNow; /// 12/14/2022 13:47:13
+
+DateTime today = DateTime.Today; /// 12/14/2022 00:00:00
+
+DateTime datenow = DateTime.Now; /// 2022/12/06 10:21:30
+
+int year = DateTime.Now.Year; /// 2022
+
+int month = DateTime.Now.Month; /// 12
+
+DateTime date = DateTime.Now.Date; /// 12/14/2022 00:00:00
+
+string tostring = DateTime.Now.ToString("yyyy-MM-dd"); /// 2022-12-06
+
+----
+. DateTime文字列表現からの値の解析
+. VisualBasic 固有の言語機能を使用してインスタンス化
+
+
+[source, csharp]
 ----
 
 DateTime.Now;
-# 2022/12/06 10:21:30
+/// 2022/12/06 10:21:30
 
 DateTime.Now.Year;
-# 2022
+/// 2022
 
 DateTime.Now.Month;
-# 12
+/// 12
 
 DateTime.Now.Date;
-# 2022/12/06 0:00:00
+/// 2022/12/06 0:00:00
 
 DateTime.Now.ToString("yyyy-MM-dd");
-# 2022-12-06
+/// 2022-12-06
 
 ----
 
-- TimeSpan
+=== https://learn.microsoft.com/ja-jp/dotnet/api/system.timespan?view=net-7.0[TimeSpan]
+
+[source, csharp]
 ----
 
-TimeSpan.Parse("00:00")
-# TimeSpan型 00:00
+TimeSpan time = "00:00"
+TimeSpan.Parse(time)
+/// TimeSpan型 00:00
+
+TimeSpan interval = new TimeSpan();
+Console.WriteLine(interval.Equals(TimeSpan.Zero));
+/// Displays "True".
+
+TimeSpan interval = new TimeSpan(2, 14, 18);
+TimeSpan isType = interval.GetType();
+Console.WriteLine(interval.ToString());
+// System.TimeSpan
+// Displays "02:14:18"
 
 ----
