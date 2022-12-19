@@ -1,0 +1,17 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+== 基礎
+
+=== 用語
+
+- アセット
+* ゲームの一部、素材、部品
+* テクスチャや3Dモデル、スクリプトやサウンドデータ、はてはゲームオブジェクトやプロジェクト自信を指す場合もある。
+
+- アセットストア
+* 他人が作成したアセットを無償/有償で利用するためのストア
+* Docker Hub, GitHubパブリックリポジトリのようなもの？
