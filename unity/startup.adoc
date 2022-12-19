@@ -12,3 +12,8 @@
 . 結局windowsへインストールする
 
 - https://scratch.best/game/battlecats-part1https://dkrevel.com/makegame-beginner/program-beginner/[Unity + C# ゲームを作ってみよう]
+
+== 初歩ミス
+
+- play mode中に編集したものは保存できずにplay mode終了時になかったことになる。
+* play mode時のウィンドウの色を編集しミス防止した。
