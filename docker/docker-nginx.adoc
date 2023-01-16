@@ -1,0 +1,65 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+== 環境変数化
+
+[source, env]
+----
+# .envファイル
+
+NGINX_SERVER_NAME=localhost
+NGINX_HOST_PORT=8080
+NGINX_PORT=80
+
+----
+
+[source, docker]
+----
+#docker-compose.yml
+
+services:
+  nginx:
+    build: ./src/nginx # dockerfileを使用する場合
+    image: nginx:latest # dockerfileを使用しない場合
+    container_name: nginx_container
+    ports:
+      - ${NGINX_HOST_PORT}:${NGINX_PORT} # "8080:80"と同義
+    environment:
+      - NGINX_PORT=${NGINX_PORT}
+      - NGINX_SERVER_NAME=${NGINX_SERVER_NAME}
+    volumes:
+      - ./templates:/etc/nginx/templates/ # templatesファイルはここに書くのすることで自動的に読み込んでくれる
+
+----
+
+[source, nginx]
+----
+# templates/default.conf.template
+
+server {
+    listen       ${NGINX_PORT};
+    listen  [::]:${NGINX_PORT};
+    server_name  ${NGINX_SERVER_NAME};
+    ## .env -> docker-compose.ymlからNGINX_PORT:80, NGINX_SERVER_NAME: localhostを取得する
+
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location / {
+        root   /var/www/html;
+        index  index.html index.htm;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+
+----
