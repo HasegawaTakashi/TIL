@@ -1,0 +1,9 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+=== https://blog.soracom.com/ja-jp/2017/03/13/bootcamp-lorawan/[LoRaWANの仕様とネットワークアーキテクチャー 2017/03/13 SORACOM公式ブログ]
+  
+  - https://www.murata.com/ja-jp/products/connectivitymodule/lora[日本での使用周波数帯 920MHz帯]
