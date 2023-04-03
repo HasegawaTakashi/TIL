@@ -1,0 +1,121 @@
+:source-hightlighter: coderay
+:toc:
+:author: HasegawaTakashi
+:lang: ja
+:doctype: book
+
+
+= mvコマンドで.pemから.crtへ変更
+
+[source,mail]
+```
+Wirnet iFemtoCell + AWS IoT Core for LoRaWAN接続失敗についてのメール
+証明書周りでエラーが出るとのことでこの回答が来た
+
+> たぶん、「mv」というコマンドはファイルフォーマットを変化しなかったかもしれません。
+
+> 私はいつもWindowsでファイルをリネームしています。その後、「.pem」が「.crt」フォーマットになったかかならず確認しています。
+```
+
+ファイル名(拡張子含む)の変更はできるがファイル形式は変わるのか
+windows上で名称変更した場合はプロパティを見ると代わっている
+しかし、証明書問題はopensslコマンドを使用して変更するべきか。
+
+
+== opensslコマンドでのcrt作成
+
+[source,Dockerfile]
+```
+# Dockerfile
+
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y openssl
+
+CMD ["/bin/bash"]
+
+```
+
+$ docker build -t openssl-ubuntu22.04-test .
+$ docker run -it openssl-ubuntu22.04-test
+
+/// Dockerコンテナ内 ///
+
+root@8cd53700de37:/# apt install file -y
+root@8cd53700de37:/# which file
+/usr/bin/file
+
+root@8cd53700de37:/# openssl version
+OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)
+
+root@8cd53700de37:/# mkdir /ssl-test
+root@8cd53700de37:/# cd /ssl-test
+root@8cd53700de37:/# pwd
+/ssl-test
+
+root@8cd53700de37:/# openssl genpkey -algorithm RSA -out test1.pem
+root@8cd53700de37:/# ls
+test1.pem
+
+root@8cd53700de37:/# openssl req -x509 -newkey rsa:4096 -keyout test1.pem -out test1.crt -days 365
+
+---
+
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:
+State or Province Name (full name) [Some-State]:
+Locality Name (eg, city) []:
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:
+Email Address []:
+
+
+root@8cd53700de37:/# ls
+bin   dev  home  lib32  libx32  mnt  proc  run   srv  test1-1.crt  tmp  var
+boot  etc  lib   lib64  media   opt  root  sbin  sys  test1.crt    usr
+
+root@d1bf63500e10:/ssl-test# ls
+test1.crt  test1.pem
+
+root@8cd53700de37:/# file test*
+
+root@d1bf63500e10:/ssl-test# file test*
+test1.crt: PEM certificate
+test1.pem: ASCII text
+
+---
+
+== mvコマンドを使用してのcrt作成
+
+mkdir /mv-test
+cd /mv-test
+pwd
+/mv-test
+
+root@d1bf63500e10:/mv-test# openssl genpkey -algorithm RSA -out test2.pem
+root@d1bf63500e10:/mv-test# ls
+test2.pem
+
+root@d1bf63500e10:/mv-test# file test2.pem
+test2.pem: ASCII text
+
+root@d1bf63500e10:/mv-test# mv test2.pem test2.crt
+root@d1bf63500e10:/mv-test# file test2.crt
+test2.crt: ASCII text
+
+
+== 結論
+
+.pemファイルをmvコマンドでリネームしてもファイル形式が変わることはない
+openssleコマンドを使用しよう
+ちなみに、windows上でファイル拡張子を変更した際は問題なくファイル形式も変更できるっぽい(そちらは細部未検証、プロパティ上での確認のみ)
